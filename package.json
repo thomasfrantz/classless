@@ -1,0 +1,16 @@
+{
+  "name": "classless",
+  "version": "0.0.1",
+  "description": "CSS micro-framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "micro-framework",
+    "classless"
+  ],
+  "author": "Thomas Frantz",
+  "license": "MIT"
+}

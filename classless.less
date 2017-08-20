@@ -1,0 +1,304 @@
+/* TODO 
+Finir les bases
+Balises HTML5 (nav, section, article, ...)
+Framework pour cards, gridlayout et popup
+Responsive Design
+Faire un design pour print
+Version mal voyant (high contrast)
+Utiliser :before pour le pourcentage d'où on est dans l'article
+Faire un design pour resto
+*/
+
+@black: #081b23;
+@white: #FAFAFA;
+@firstColor: #89F431;
+@secondColor: #FF6D33;
+@thirdColor: #DA2CDA;
+@validColor: #89F431;
+@invalidColor: #F4316C;
+@titleFontfamily: sans-serif;
+@textFontfamily: serif;
+@fontSize : 22px;
+
+@blockquoteColor: @firstColor;
+@buttonColor: @firstColor;
+@hrColor:  @thirdColor;
+@trColor: @secondColor;
+
+// document
+html {
+  font-size: @fontSize;
+}
+body {
+  color:@black;
+  background-color: @white;
+  font-size: 1em;
+  max-width: 50%;
+  margin: auto;
+  font-family: @textFontfamily;
+  line-height: 1.5em;
+  // Lobotomized Owl
+  * + * {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+  }
+}
+// /document
+
+// paragraphs
+p {
+
+}
+// /paragraphs
+
+// links
+a {
+  background-color: transparent;
+  color: #0083E8;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: #9314ff;
+  }
+  &:active{
+    color: #FF512C;
+  }
+  #mixin-sup {
+    font-size: smaller;
+    vertical-align: super;
+    margin-left: 0.2em;
+  }
+  &[download]:after {
+    content:'\21D3';
+    #mixin-sup;
+  }
+  &[rel~=external]:after {
+    content:'\279A';
+    #mixin-sup;
+  }
+  &[href^="mailto"]:after {
+    content:'\260F';
+    #mixin-sup;
+  }
+}
+// /links
+
+// lists
+ul, ol{
+  padding-left: 1em;
+}
+  li + * {
+      margin-top: 0.25em;
+  }
+// /lists
+
+// quotes
+blockquote{
+  font-style: italic;
+  margin-left: 3px;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: 3px solid @blockquoteColor;
+  background-color: fadeout(@blockquoteColor, 85%);
+  text-align: justify;
+  * {
+    margin: 0;
+  }
+  cite{
+    font-style: initial;
+    font-weight: bold;
+  }
+
+  &:before {
+  }
+  &:after {
+  }
+}
+// /quotes
+
+// code blocks
+pre {
+  display: block;
+  background-color: @black;
+  color: @white;
+  padding: 0.7em;
+  overflow-x: auto;
+  border-radius: 0.5em;
+  code {
+    font-family: Consolas, monospace;
+  }
+}
+// /code blocks
+
+// lines
+hr {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0), 
+    @hrColor, rgba(0, 0, 0, 0)
+  );
+}
+// /lines
+
+// tables
+table {
+  text-align: justify;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+
+  caption {
+    font-style: italic;
+  }
+}
+th {
+  border-bottom: 1px solid;
+}
+th + th{
+  border-left: 1px solid;
+}
+tr {
+  td{
+      border-top: 1px solid;
+  }
+}
+td + td{
+    border-left: 1px solid;
+}
+tbody, tfoot{
+  tr:hover{
+    background-color: fadeout(@trColor, 85%);
+  }
+}
+th, td {
+  padding: 0.4em;
+}
+// /tables
+
+// forms
+form{
+  letter-spacing: 0.1em;
+  ul, ol {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+fieldset{
+  border-radius: 0.4em;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  font-family: @titleFontfamily;
+  line-height: 1em;
+  margin-bottom: 0;
+  legend + *{
+    margin-top: 0;
+  }
+}
+input, textarea, select {
+  letter-spacing: 0.1em;
+  padding: 0.25em 1em;
+  border-radius: 0.4em;
+  border: 1px solid fadeout(@black, 85%);
+  font-size: 0.8em;
+  font-family: @titleFontfamily;
+  vertical-align: middle;
+  width: auto;
+
+  &:focus {
+    outline: none;
+    border-color: rgb(168, 201, 254);
+    box-shadow: 0px 1px 5px rgb(168, 201, 254);
+  }
+}
+textarea {
+  display: block;
+  margin-top: 0.5em;
+}
+label {
+  cursor: auto;
+  font-family: @titleFontfamily;
+  margin-top: 0.25em;
+}
+label + select , label > select {
+  margin-left: 0.5em;
+}
+input[type=checkbox], input[type=radio] {
+  width:1em;
+  height:1em;
+}
+// /forms
+
+
+// buttons
+button, input[type=reset], input[type=submit] , input[type=button] {
+  padding: 0.5em 1em;
+  border-radius: 0.4em;
+  border: 1px solid fadeout(@black, 85%);
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  vertical-align: middle;
+  width: auto;
+  margin-top: 0.25em;
+  background: @buttonColor;
+  color: @white;
+  text-shadow: 0px 1px 5px @black;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: darken(@buttonColor, 15%);
+  }
+  &:active {
+    background: darken(@buttonColor, 20%);
+  }
+  &:disabled {
+    background: fadeout(@black, 85%);
+    color: fadeout(@black, 50%);
+    cursor: not-allowed;
+    text-shadow: none;
+  }
+}
+// /buttons
+
+// titles
+h1, h2, h3, h4, h5, h6 {
+  font-family: @titleFontfamily;
+}
+// Created via http://www.modularscale.com/?1&em&1.2
+h1{
+  font-size :2.074em;
+}
+h2{
+  font-size :1.728em;
+}
+h3, fieldset legend{
+  font-size :1.44em;
+}
+h4{
+  font-size :1.2em;
+}
+h5, h6{
+  font-size :1em;
+}
+// /titles
+
+// mages
+img {
+  max-width: 100%;
+  box-shadow: 2px 2px 5px @black;
+}
+// /images
+
+// printable version
+@media print {
+  a[href]:after {
+    content: ' (' attr(href) ') ';
+  }
+}
+// /printable version

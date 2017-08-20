@@ -1,0 +1,290 @@
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <title>Classless demo</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href='classless.css' id="classless-css" rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+  </script>
+  <style>
+    body {
+      font-size: 1em;
+      max-width: 50%;
+      margin: auto;
+    }
+    #toggle {
+      color: white;
+      background-color: black;
+      font-size: 18px;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+    }
+    #top {
+      padding-top: 40px;
+    }
+    #toggleButton {
+      align: right;
+    }
+  </style>
+</head>
+<body>
+  <div id="toggle">
+    <span><button id="toggleButton" onclick="toggleClassless();">Toggle</button> Toggle classless.css on/off</span><br>
+    <span id="switch"><button id="switchThemeButton" onclick="switchClasslessTheme();">Switch</button>Current theme: <span id="currentTheme">classless (default)</span></span>
+  </div>
+  <div id="top">
+    <h1>Classless demo (h1 header)</h1>
+    <p>This is a demo (work in progress) inspired by : <a href="https://github.com/oxalorg/sakura">Sakura (minimalist css framework)</a></p>
+    <p>Paragraphs look like this. Font size along with line height and maximum width are optimized for reading.</p>
+
+    <p><em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists look like:</p>
+    <ul>
+      <li>this one</li>
+      <li>that one</li>
+      <li>the other one</li>
+    </ul>
+
+    <p><strong>Here's a block quote</strong>:</p>
+    <blockquote>
+      <p>Man surprised me most about humanity. Because he sacrifices his health in order to make money. Then he sacrifices money to recuperate his health. And then he is so anxious about the future that he does not enjoy the present; the result being that he does not live in the present or the future; he lives as if he is never going to die, and then dies having never really lived.</p>
+      <cite>- James J Lachard</cite>
+    </blockquote>
+
+    <h2 id="an-h2-header">An h2 header</h2>
+    <p><strong>Some code blocks</strong></p>
+    <pre><code>define foobar() {
+    print &quot;Welcome to flavor country!&quot;;
+}</code></pre>
+    <div class="sourceCode">
+      <pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> time
+<span class="co"># Quick, count to ten!</span>
+<span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
+    <span class="co"># (but not *too* quick)</span>
+    time.sleep(<span class="fl">0.5</span>)
+    <span class="bu">print</span> i</code></pre>
+  </div>
+
+  <h3 id="an-h3-header">An h3 header</h3>
+  <p>A nested list:</p>
+  <ol style="list-style-type: decimal">
+    <li>
+      First, get these ingredients:
+      <ul>
+        <li>carrots</li>
+        <li>celery</li>
+        <li>lentils</li>
+      </ul>
+    </li>
+    <li>
+      Boil some water.
+    </li>
+    <li>
+      Dump everything in the pot and follow this algorithm:
+      <pre><code>find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)</code></pre>
+      Do not bump wooden spoon or it will fall.
+    </li>
+  </ol>
+
+  <h1 id="header-level-1">Header level 1</h1>
+  <h2 id="header-level-2">Header level 2</h2>
+  <h3 id="header-level-3">Header level 3</h3>
+  <h4 id="header-level-4">Header level 4</h4>
+  <h5 id="header-level-5">Header level 5</h5>
+  <h6 id="header-level-6">Header level 6</h6>
+
+  <p>A horizontal line:</p>
+  <hr>
+
+  <p>Here's a link to <a href="http://foo.bar" rel="external">an external website</a>, to a <a href="local-doc.html">local doc</a>, and to a <a href="#an-h2-header">section heading in the current doc</a>. Here's a footnote <a href="#fn1" id="fnref1"><sup>1</sup></a>. Here's a <a href="#fn1" id="fnref1" download>download link</a>. Here's an <a href="mailto:thom.frantz@gmail.com" id="fnref1">email adress</a>.</p>
+  <p>Tables can look like this:</p>
+
+  <table>
+    <caption>
+      Shoes, their sizes, and what they're made of
+    </caption>
+    <thead>
+      <tr >
+        <th align="left">size</th>
+        <th align="left">material</th>
+        <th align="left">color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td align="left">9</td>
+        <td align="left">leather</td>
+        <td align="left">brown</td>
+      </tr>
+      <tr >
+        <td align="left">10</td>
+        <td align="left">hemp canvas</td>
+        <td align="left">natural</td>
+      </tr>
+      <tr >
+        <td align="left">11</td>
+        <td align="left">glass</td>
+        <td align="left">transparent</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Multi-line tables:</p>
+  <table style="width:46%;">
+    <colgroup>
+      <col width="13%">
+      <col width="31%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th align="left">keyword</th>
+        <th align="left">text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="left">red</td>
+        <td align="left">Sunsets, apples, and other red or reddish things.</td>
+      </tr>
+      <tr>
+        <td align="left">green</td>
+        <td align="left">Leaves, grass, frogs and other things it's not easy being.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>A horizontal rule follows.</p>
+  <hr>
+  <p>Images are responsive by default:</p>
+  <div>
+    <img alt="example image" src="sakura.png" title="An exemplary image">
+    <img alt="example image" src="image.jpg" title="Another exemplary image">
+    <p>example image</p>
+  </div>
+
+  <h1 id="form-elements">Form Elements</h1>
+  <form>
+    <fieldset id="forms__input">
+      <legend>Input fields</legend>
+      <div><label>Text Input <input  name="text" placeholder="Text Input" type="text"></label></div>
+      <div><label>Password <input required name="password" placeholder="Type your Password" type="password"></label></div>
+      <div><label>Web Address <input  name="url" placeholder="http://yoursite.com" type="url"></label></div>
+      <div><label>Email Address <input  name="email" placeholder="name@email.com" type="email"></label></div>
+      <div><label>Phone Number <input required name="tel" placeholder="(999) 999-9999" type="tel"></label></div>
+      <div><label>Search <input  name="search" placeholder="Enter Search Term" type="search"></label></div>
+      <div><label>Number Input <input  name="number" placeholder="Enter a Number" type="number"></label></div>
+      <div><label>Error <input  name="error" placeholder="Text Input" type="text"></label></div>
+      <div><label>Valid <input  name="valid" placeholder="Text Input" type="text"></label></div>
+    </fieldset>
+    <p><a href="#top">[Top]</a></p>
+    <fieldset id="forms__select">
+      <legend>Select menus</legend>
+      <div><label>Select<select name="select">
+          <optgroup label="Option Group">
+            <option>
+              Option One
+            </option>
+            <option>
+              Option Two
+            </option>
+            <option>
+              Option Three
+            </option>
+          </optgroup>
+      </select></label></div>
+    </fieldset>
+    <p><a href="#top">[Top]</a></p>
+    <fieldset>
+      <legend>Checkboxes & Radio buttons</legend>
+      <div>
+        <label><input checked="checked" name="checkbox" type="checkbox"> Choice A</label>
+        <label><input name="checkbox" type="checkbox"> Choice B</label>
+        <label><input name="checkbox" type="checkbox"> Choice C</label>
+      </div>
+      <ul>
+        <li><label><input checked="checked" name="radio" type="radio"> Choice A</label></li>
+        <li><label><input name="radio" type="radio"> Choice B</label></li>
+        <li><label><input name="radio" type="radio"> Choice C</label></li>
+      </ul>
+    </fieldset>
+    <p><a href="#top">[Top]</a></p>
+    <fieldset>
+      <legend>Textareas</legend>
+      <div><label for="textarea">Textarea <textarea cols="48" id="textarea" placeholder="Enter your message here" rows="8"></textarea></label></div>
+    </fieldset>
+    <p><a href="#top">[Top]</a></p>
+    <fieldset id="forms__html5">
+      <fieldset id="forms__action">
+        <legend>Action buttons</legend>
+        <ul>
+          <li><input type="submit" value="input type=submit"></li>
+          <li><input type="button" value="input type=button"></li>
+          <li><input type="reset" value="input type=reset"></li>
+          <li><input disabled type="submit" value="input disabled"></li>
+        </ul>
+        <div>
+          <button type="submit">button type=submit</button>
+          <button type="button">button type=button</button>
+          <button type="reset">button type=reset</button>
+          <button disabled type="button">button disabled</button>
+        </div>
+      </fieldset>
+      <p><a href="#top">[Top]</a></p>
+    </fieldset>
+  </form>
+  <div>
+    <hr>
+    <ol>
+      <li id="fn1">
+        <p>Footnote text goes here.<a href="#fnref1">↩</a></p>
+      </li>
+    </ol>
+  </div>
+</div>
+<script>
+  var themes = [
+    {
+      name: "Classless (default)",
+      href: "classless.css",
+    },
+    {
+      name: "classless-earthly",
+      href: "classless-earthly.css",
+    },
+    {
+      name: "classless-vader",
+      href: "classless-vader.css",
+    },
+    {
+      name: "classless-dark",
+      href: "classless-dark.css"
+    },
+  ];
+  var current = 0;
+  var classless = document.getElementById("classless-css");
+  classless.disabled = false;
+  function toggleClassless() {
+    if (classless.disabled === true) {
+      classless.disabled = false
+      switchTag.style.display = 'block';
+    } else {
+      classless.disabled = true
+      switchTag.style.display = 'none';
+    }
+  }
+
+  var switchTag = document.getElementById("switch");
+  var currentThemeTag = document.getElementById("currentTheme");
+  function switchClasslessTheme() {
+    classless.href = themes[(current + 1)% themes.length].href;
+    currentThemeTag.innerHTML = themes[(current + 1)% themes.length].name;
+    current += 1
+  }
+</script>
+</body>
+</html>

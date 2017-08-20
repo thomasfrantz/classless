@@ -1,0 +1,261 @@
+/* TODO 
+Finir les bases
+Balises HTML5 (nav, section, article, ...)
+Framework pour cards, gridlayout et popup
+Responsive Design
+Faire un design pour print
+Version mal voyant (high contrast)
+Utiliser :before pour le pourcentage d'où on est dans l'article
+Faire un design pour resto
+*/
+html {
+  font-size: 22px;
+}
+body {
+  color: #081b23;
+  background-color: #FAFAFA;
+  font-size: 1em;
+  max-width: 50%;
+  margin: auto;
+  font-family: serif;
+  line-height: 1.5em;
+}
+body * + * {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+a {
+  background-color: transparent;
+  color: #0083E8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: #9314ff;
+}
+a:active {
+  color: #FF512C;
+}
+a #mixin-sup {
+  font-size: smaller;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+a[download]:after {
+  content: '\21D3';
+  font-size: smaller;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+a[rel~=external]:after {
+  content: '\279A';
+  font-size: smaller;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+a[href^="mailto"]:after {
+  content: '\260F';
+  font-size: smaller;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+ul,
+ol {
+  padding-left: 1em;
+}
+li + * {
+  margin-top: 0.25em;
+}
+blockquote {
+  font-style: italic;
+  margin-left: 3px;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: 3px solid #89F431;
+  background-color: rgba(137, 244, 49, 0.15);
+  text-align: justify;
+}
+blockquote * {
+  margin: 0;
+}
+blockquote cite {
+  font-style: initial;
+  font-weight: bold;
+}
+pre {
+  display: block;
+  background-color: #081b23;
+  color: #FAFAFA;
+  padding: 0.7em;
+  overflow-x: auto;
+  border-radius: 0.5em;
+}
+pre code {
+  font-family: Consolas, monospace;
+}
+hr {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #DA2CDA, rgba(0, 0, 0, 0));
+}
+table {
+  text-align: justify;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+table caption {
+  font-style: italic;
+}
+th {
+  border-bottom: 1px solid;
+}
+th + th {
+  border-left: 1px solid;
+}
+tr td {
+  border-top: 1px solid;
+}
+td + td {
+  border-left: 1px solid;
+}
+tbody tr:hover,
+tfoot tr:hover {
+  background-color: rgba(255, 109, 51, 0.15);
+}
+th,
+td {
+  padding: 0.4em;
+}
+form {
+  letter-spacing: 0.1em;
+}
+form ul,
+form ol {
+  list-style: none;
+  padding-left: 0;
+}
+fieldset {
+  border-radius: 0.4em;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  font-family: sans-serif;
+  line-height: 1em;
+  margin-bottom: 0;
+}
+fieldset legend + * {
+  margin-top: 0;
+}
+input,
+textarea,
+select {
+  letter-spacing: 0.1em;
+  padding: 0.25em 1em;
+  border-radius: 0.4em;
+  border: 1px solid rgba(8, 27, 35, 0.15);
+  font-size: 0.8em;
+  font-family: sans-serif;
+  vertical-align: middle;
+  width: auto;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #a8c9fe;
+  box-shadow: 0px 1px 5px #a8c9fe;
+}
+textarea {
+  display: block;
+  margin-top: 0.5em;
+}
+label {
+  cursor: auto;
+  font-family: sans-serif;
+  margin-top: 0.25em;
+}
+label + select,
+label > select {
+  margin-left: 0.5em;
+}
+input[type=checkbox],
+input[type=radio] {
+  width: 1em;
+  height: 1em;
+}
+button,
+input[type=reset],
+input[type=submit],
+input[type=button] {
+  padding: 0.5em 1em;
+  border-radius: 0.4em;
+  border: 1px solid rgba(8, 27, 35, 0.15);
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  vertical-align: middle;
+  width: auto;
+  margin-top: 0.25em;
+  background: #89F431;
+  color: #FAFAFA;
+  text-shadow: 0px 1px 5px #081b23;
+  cursor: pointer;
+  outline: none;
+}
+button:hover,
+input[type=reset]:hover,
+input[type=submit]:hover,
+input[type=button]:hover {
+  background: #63ce0b;
+}
+button:active,
+input[type=reset]:active,
+input[type=submit]:active,
+input[type=button]:active {
+  background: #57b50a;
+}
+button:disabled,
+input[type=reset]:disabled,
+input[type=submit]:disabled,
+input[type=button]:disabled {
+  background: rgba(8, 27, 35, 0.15);
+  color: rgba(8, 27, 35, 0.5);
+  cursor: not-allowed;
+  text-shadow: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 2.074em;
+}
+h2 {
+  font-size: 1.728em;
+}
+h3,
+fieldset legend {
+  font-size: 1.44em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5,
+h6 {
+  font-size: 1em;
+}
+img {
+  max-width: 100%;
+  box-shadow: 2px 2px 5px #081b23;
+}
+@media print {
+  a[href]:after {
+    content: ' (' attr(href) ') ';
+  }
+}
