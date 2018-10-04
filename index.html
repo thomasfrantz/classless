@@ -2,26 +2,26 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="content-type">
   <title>Classless demo</title>
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='classless.css' id="classless-css" rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
   </script>
   <style>
     body {
-      font-size: 1em;
-      max-width: 50%;
-      margin: auto;
+      /*font-size: 1em;*/
+      /*max-width: 50%;*/
+      /*margin: auto;*/
     }
     #toggle {
       color: white;
-      background-color: black;
-      font-size: 18px;
+      background-color: #081b23;
+      font-size: 1em;
       position: fixed;
       left: 0px;
       top: 0px;
     }
     #top {
-      padding-top: 40px;
+      padding-top: 2em;
     }
     #toggleButton {
       align: right;
@@ -31,7 +31,6 @@
 <body>
   <div id="toggle">
     <span><button id="toggleButton" onclick="toggleClassless();">Toggle</button> Toggle classless.css on/off</span><br>
-    <span id="switch"><button id="switchThemeButton" onclick="switchClasslessTheme();">Switch</button>Current theme: <span id="currentTheme">classless (default)</span></span>
   </div>
   <div id="top">
     <h1>Classless demo (h1 header)</h1>
@@ -226,6 +225,15 @@ goto first step (or shut off burner when done)</code></pre>
           <li><input type="button" value="input type=button"></li>
           <li><input type="reset" value="input type=reset"></li>
           <li><input disabled type="submit" value="input disabled"></li>
+        </ul>
+        <ul>
+          <li><button class="default">button class=default</button></li>
+          <li><button class="success">button class=success</button></li>
+          <li><button class="warning">button class=warning</button></li>
+          <li><button class="danger">button class=danger</button></li>
+          <li><button class="first">button class=first</button></li>
+          <li><button class="second">button class=second</button></li>
+          <li><button class="third">button class=third</button></li>
         </ul>
         <div>
           <button type="submit">button type=submit</button>

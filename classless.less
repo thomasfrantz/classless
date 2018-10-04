@@ -1,41 +1,48 @@
 /* TODO 
-Finir les bases
-Balises HTML5 (nav, section, article, ...)
-Framework pour cards, gridlayout et popup
-Responsive Design
-Faire un design pour print
-Version mal voyant (high contrast)
-Utiliser :before pour le pourcentage d'où on est dans l'article
-Faire un design pour resto
+V Finir les bases
+  Balises HTML5 (nav, section, article, ...)
+  Framework pour cards, gridlayout et popup
+  Responsive Design
+  Faire un design pour print
+  Peut-être Version mal voyant (high contrast)
+  Utiliser :before pour le pourcentage d'où on est dans l'article
+  Faire un design pour restaurant
 */
 
 @black: #081b23;
 @white: #FAFAFA;
-@firstColor: #89F431;
-@secondColor: #FF6D33;
-@thirdColor: #DA2CDA;
-@validColor: #89F431;
-@invalidColor: #F4316C;
-@titleFontfamily: sans-serif;
-@textFontfamily: serif;
+@firstColor: #3B3BF4;
+@secondColor: #299AF1;
+@thirdColor: #822DF3;
+@successColor: #89F431;
+@dangerColor: #ff3333;
+@warningColor: #FF9D33;
+@linkColor: #0083E8;
+@linkVisitedColor: #9314ff;
+@linkActiveColor: #FF512C;
+
+@headingFontfamily: sans-serif;
+@bodyFontfamily: serif;
+@codeFontfamily: Consolas, monospace;
 @fontSize : 22px;
 
-@blockquoteColor: @firstColor;
+@blockquoteColor: @thirdColor;
 @buttonColor: @firstColor;
-@hrColor:  @thirdColor;
-@trColor: @secondColor;
+@hrColor:  @secondColor;
+@trColor: @firstColor;
 
 // document
 html {
   font-size: @fontSize;
 }
+
 body {
   color:@black;
   background-color: @white;
   font-size: 1em;
   max-width: 50%;
   margin: auto;
-  font-family: @textFontfamily;
+  font-family: @bodyFontfamily;
   line-height: 1.5em;
   // Lobotomized Owl
   * + * {
@@ -54,17 +61,17 @@ p {
 // links
 a {
   background-color: transparent;
-  color: #0083E8;
+  color: @linkColor;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
   }
   &:visited {
-    color: #9314ff;
+    color: @linkVisitedColor;
   }
   &:active{
-    color: #FF512C;
+    color: @linkActiveColor;
   }
   #mixin-sup {
     font-size: smaller;
@@ -90,18 +97,19 @@ a {
 ul, ol{
   padding-left: 1em;
 }
-  li + * {
-      margin-top: 0.25em;
-  }
+li + * {
+    margin-top: 0.25em;
+}
 // /lists
 
 // quotes
 blockquote{
   font-style: italic;
-  margin-left: 3px;
+  margin-left: 0.25em; // WTF Browser defaults
+  margin-right: 0; // WTF Browser defaults
   padding-left: 1em;
   padding-right: 1em;
-  border-left: 3px solid @blockquoteColor;
+  border-left: 0.25em solid @blockquoteColor;
   background-color: fadeout(@blockquoteColor, 85%);
   text-align: justify;
   * {
@@ -124,11 +132,11 @@ pre {
   display: block;
   background-color: @black;
   color: @white;
-  padding: 0.7em;
+  padding: 0.75em;
   overflow-x: auto;
   border-radius: 0.5em;
   code {
-    font-family: Consolas, monospace;
+    font-family: @codeFontfamily;
   }
 }
 // /code blocks
@@ -176,7 +184,7 @@ tbody, tfoot{
   }
 }
 th, td {
-  padding: 0.4em;
+  padding: 0.5em;
 }
 // /tables
 
@@ -189,12 +197,16 @@ form{
   }
 }
 fieldset{
-  border-radius: 0.4em;
+  border-radius: 0.5em;
   padding-bottom: 1.5em;
   padding-top: 1.5em;
-  font-family: @titleFontfamily;
+  font-family: @headingFontfamily;
   line-height: 1em;
   margin-bottom: 0;
+  legend {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
   legend + *{
     margin-top: 0;
   }
@@ -202,10 +214,10 @@ fieldset{
 input, textarea, select {
   letter-spacing: 0.1em;
   padding: 0.25em 1em;
-  border-radius: 0.4em;
+  border-radius: 0.5em;
   border: 1px solid fadeout(@black, 85%);
-  font-size: 0.8em;
-  font-family: @titleFontfamily;
+  font-size: 0.75em;
+  font-family: @headingFontfamily;
   vertical-align: middle;
   width: auto;
 
@@ -216,12 +228,12 @@ input, textarea, select {
   }
 }
 textarea {
-  display: block;
   margin-top: 0.5em;
+  width: 100%;
 }
 label {
   cursor: auto;
-  font-family: @titleFontfamily;
+  font-family: @headingFontfamily;
   margin-top: 0.25em;
 }
 label + select , label > select {
@@ -237,7 +249,7 @@ input[type=checkbox], input[type=radio] {
 // buttons
 button, input[type=reset], input[type=submit] , input[type=button] {
   padding: 0.5em 1em;
-  border-radius: 0.4em;
+  border-radius: 0.5em;
   border: 1px solid fadeout(@black, 85%);
   font-size: 1em;
   font-weight: bold;
@@ -252,10 +264,10 @@ button, input[type=reset], input[type=submit] , input[type=button] {
   outline: none;
 
   &:hover {
-    background: darken(@buttonColor, 15%);
+    background: darken(@buttonColor, 10%);
   }
   &:active {
-    background: darken(@buttonColor, 20%);
+    background: darken(@buttonColor, 15%);
   }
   &:disabled {
     background: fadeout(@black, 85%);
@@ -263,12 +275,67 @@ button, input[type=reset], input[type=submit] , input[type=button] {
     cursor: not-allowed;
     text-shadow: none;
   }
+  &.success {
+    background: @successColor;
+  }
+  &.success:hover {
+    background: darken(@successColor, 10%);
+  }
+  &.success:active {
+    background: darken(@successColor, 15%);
+  }
+  &.danger {
+    background: @dangerColor;
+  }
+  &.danger:hover {
+    background: darken(@dangerColor, 10%);
+  }
+  &.danger:active {
+    background: darken(@dangerColor, 15%);
+  }
+  &.warning {
+    background: @warningColor;
+  }
+  &.warning:hover {
+    background: darken(@warningColor, 10%);
+  }
+  &.warning:active {
+    background: darken(@warningColor, 15%);
+  }
+  &.first {
+    background: @firstColor;
+  }
+  &.first:hover {
+    background: darken(@firstColor, 10%);
+  }
+  &.first:active {
+    background: darken(@firstColor, 15%);
+  }
+  &.second {
+    background: @secondColor;
+  }
+  &.second:hover {
+    background: darken(@secondColor, 10%);
+  }
+  &.second:active {
+    background: darken(@secondColor, 15%);
+  }
+  &.third {
+    background: @thirdColor;
+  }
+  &.third:hover {
+    background: darken(@thirdColor, 10%);
+  }
+  &.third:active {
+    background: darken(@thirdColor, 15%);
+  }
 }
 // /buttons
 
-// titles
+// headings
 h1, h2, h3, h4, h5, h6 {
-  font-family: @titleFontfamily;
+  font-family: @headingFontfamily;
+  line-height: 1.5em;
 }
 // Created via http://www.modularscale.com/?1&em&1.2
 h1{
@@ -286,14 +353,25 @@ h4{
 h5, h6{
   font-size :1em;
 }
-// /titles
+// /headings
 
-// mages
+// images
 img {
   max-width: 100%;
   box-shadow: 2px 2px 5px @black;
 }
 // /images
+
+// responsive
+ @media only screen and (max-width : 750px) {
+  html {
+    font-size: @fontSize / 2;
+  }
+  body {
+    max-width: 92%;
+  }
+}
+// /responsive
 
 // printable version
 @media print {

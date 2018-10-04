@@ -1,12 +1,12 @@
 /* TODO 
-Finir les bases
-Balises HTML5 (nav, section, article, ...)
-Framework pour cards, gridlayout et popup
-Responsive Design
-Faire un design pour print
-Version mal voyant (high contrast)
-Utiliser :before pour le pourcentage d'où on est dans l'article
-Faire un design pour resto
+V Finir les bases
+  Balises HTML5 (nav, section, article, ...)
+  Framework pour cards, gridlayout et popup
+  Responsive Design
+  Faire un design pour print
+  Peut-être Version mal voyant (high contrast)
+  Utiliser :before pour le pourcentage d'où on est dans l'article
+  Faire un design pour restaurant
 */
 html {
   font-size: 22px;
@@ -70,11 +70,12 @@ li + * {
 }
 blockquote {
   font-style: italic;
-  margin-left: 3px;
+  margin-left: 0.25em;
+  margin-right: 0;
   padding-left: 1em;
   padding-right: 1em;
-  border-left: 3px solid #89F431;
-  background-color: rgba(137, 244, 49, 0.15);
+  border-left: 0.25em solid #822DF3;
+  background-color: rgba(130, 45, 243, 0.15);
   text-align: justify;
 }
 blockquote * {
@@ -88,7 +89,7 @@ pre {
   display: block;
   background-color: #081b23;
   color: #FAFAFA;
-  padding: 0.7em;
+  padding: 0.75em;
   overflow-x: auto;
   border-radius: 0.5em;
 }
@@ -98,7 +99,7 @@ pre code {
 hr {
   border: 0;
   height: 2px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #DA2CDA, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #299AF1, rgba(0, 0, 0, 0));
 }
 table {
   text-align: justify;
@@ -123,11 +124,11 @@ td + td {
 }
 tbody tr:hover,
 tfoot tr:hover {
-  background-color: rgba(255, 109, 51, 0.15);
+  background-color: rgba(59, 59, 244, 0.15);
 }
 th,
 td {
-  padding: 0.4em;
+  padding: 0.5em;
 }
 form {
   letter-spacing: 0.1em;
@@ -138,12 +139,16 @@ form ol {
   padding-left: 0;
 }
 fieldset {
-  border-radius: 0.4em;
+  border-radius: 0.5em;
   padding-bottom: 1.5em;
   padding-top: 1.5em;
   font-family: sans-serif;
   line-height: 1em;
   margin-bottom: 0;
+}
+fieldset legend {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 fieldset legend + * {
   margin-top: 0;
@@ -153,9 +158,9 @@ textarea,
 select {
   letter-spacing: 0.1em;
   padding: 0.25em 1em;
-  border-radius: 0.4em;
+  border-radius: 0.5em;
   border: 1px solid rgba(8, 27, 35, 0.15);
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-family: sans-serif;
   vertical-align: middle;
   width: auto;
@@ -168,8 +173,8 @@ select:focus {
   box-shadow: 0px 1px 5px #a8c9fe;
 }
 textarea {
-  display: block;
   margin-top: 0.5em;
+  width: 100%;
 }
 label {
   cursor: auto;
@@ -190,7 +195,7 @@ input[type=reset],
 input[type=submit],
 input[type=button] {
   padding: 0.5em 1em;
-  border-radius: 0.4em;
+  border-radius: 0.5em;
   border: 1px solid rgba(8, 27, 35, 0.15);
   font-size: 1em;
   font-weight: bold;
@@ -198,7 +203,7 @@ input[type=button] {
   vertical-align: middle;
   width: auto;
   margin-top: 0.25em;
-  background: #89F431;
+  background: #3B3BF4;
   color: #FAFAFA;
   text-shadow: 0px 1px 5px #081b23;
   cursor: pointer;
@@ -208,13 +213,13 @@ button:hover,
 input[type=reset]:hover,
 input[type=submit]:hover,
 input[type=button]:hover {
-  background: #63ce0b;
+  background: #0d0def;
 }
 button:active,
 input[type=reset]:active,
 input[type=submit]:active,
 input[type=button]:active {
-  background: #57b50a;
+  background: #0c0cd6;
 }
 button:disabled,
 input[type=reset]:disabled,
@@ -225,6 +230,114 @@ input[type=button]:disabled {
   cursor: not-allowed;
   text-shadow: none;
 }
+button.success,
+input[type=reset].success,
+input[type=submit].success,
+input[type=button].success {
+  background: #89F431;
+}
+button.success:hover,
+input[type=reset].success:hover,
+input[type=submit].success:hover,
+input[type=button].success:hover {
+  background: #6ee60c;
+}
+button.success:active,
+input[type=reset].success:active,
+input[type=submit].success:active,
+input[type=button].success:active {
+  background: #63ce0b;
+}
+button.danger,
+input[type=reset].danger,
+input[type=submit].danger,
+input[type=button].danger {
+  background: #ff3333;
+}
+button.danger:hover,
+input[type=reset].danger:hover,
+input[type=submit].danger:hover,
+input[type=button].danger:hover {
+  background: #ff0000;
+}
+button.danger:active,
+input[type=reset].danger:active,
+input[type=submit].danger:active,
+input[type=button].danger:active {
+  background: #e50000;
+}
+button.warning,
+input[type=reset].warning,
+input[type=submit].warning,
+input[type=button].warning {
+  background: #FF9D33;
+}
+button.warning:hover,
+input[type=reset].warning:hover,
+input[type=submit].warning:hover,
+input[type=button].warning:hover {
+  background: #ff8500;
+}
+button.warning:active,
+input[type=reset].warning:active,
+input[type=submit].warning:active,
+input[type=button].warning:active {
+  background: #e57700;
+}
+button.first,
+input[type=reset].first,
+input[type=submit].first,
+input[type=button].first {
+  background: #3B3BF4;
+}
+button.first:hover,
+input[type=reset].first:hover,
+input[type=submit].first:hover,
+input[type=button].first:hover {
+  background: #0d0def;
+}
+button.first:active,
+input[type=reset].first:active,
+input[type=submit].first:active,
+input[type=button].first:active {
+  background: #0c0cd6;
+}
+button.second,
+input[type=reset].second,
+input[type=submit].second,
+input[type=button].second {
+  background: #299AF1;
+}
+button.second:hover,
+input[type=reset].second:hover,
+input[type=submit].second:hover,
+input[type=button].second:hover {
+  background: #0e81d9;
+}
+button.second:active,
+input[type=reset].second:active,
+input[type=submit].second:active,
+input[type=button].second:active {
+  background: #0d72c1;
+}
+button.third,
+input[type=reset].third,
+input[type=submit].third,
+input[type=button].third {
+  background: #822DF3;
+}
+button.third:hover,
+input[type=reset].third:hover,
+input[type=submit].third:hover,
+input[type=button].third:hover {
+  background: #680de0;
+}
+button.third:active,
+input[type=reset].third:active,
+input[type=submit].third:active,
+input[type=button].third:active {
+  background: #5c0bc8;
+}
 h1,
 h2,
 h3,
@@ -232,6 +345,7 @@ h4,
 h5,
 h6 {
   font-family: sans-serif;
+  line-height: 1.5em;
 }
 h1 {
   font-size: 2.074em;
@@ -253,6 +367,14 @@ h6 {
 img {
   max-width: 100%;
   box-shadow: 2px 2px 5px #081b23;
+}
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 11px;
+  }
+  body {
+    max-width: 92%;
+  }
 }
 @media print {
   a[href]:after {
